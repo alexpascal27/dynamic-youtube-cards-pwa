@@ -2,7 +2,7 @@ import {InferGetServerSidePropsType} from "next";
 import {Video} from "@/types/videos";
 import createApolloClient from "../../../apollo-client";
 import {gql} from "@apollo/client";
-import {ChakraProvider, Grid, GridItem, Box, Image, Badge, StarIcon } from "@chakra-ui/react";
+import {ChakraProvider, Grid, GridItem} from "@chakra-ui/react";
 import {VideoCard} from "@/components/video-card/video-card";
 
 export async function getServerSideProps() {
