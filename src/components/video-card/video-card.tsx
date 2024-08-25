@@ -1,44 +1,39 @@
 import {
-    Box,
     Heading,
     Stack,
     Text,
-    Divider,
-    ButtonGroup,
-    Button,
-    Image
+    Image,
+    IconButton,
+    Box
 } from '@chakra-ui/react'
 import { BsThreeDotsVertical } from "react-icons/bs";
-import {IconButton} from "@chakra-ui/button";
+import {VideoCardMediaSection} from "@/components/video-card/video-card-media-section";
 
-export const VideoCard = ({ video }) => {
-  return (
-      <Box maxW='sm'>
-              <Image // Change into the new component
-                  src={video.thumbnailURL}
-                  alt='Thumbnail picture'
-                  borderRadius='lg'
+export const VideoCard = ({video}) => {
+    return (
+        <Box maxW='sm'>
+            <VideoCardMediaSection thumbnailURL={video.thumbnailURL} duration={video.duration}/>
+            <Stack pt='2' direction='row' spacing='3'>
+              <Image
+                  borderRadius='full'
+                  boxSize='38px'
+                  src={video.iconURL}
+                  alt='Profile picture'
               />
-              <Stack pt='2' direction='row' spacing='3'>
-                  <Image
-                      borderRadius='full'
-                      boxSize='50px'
-                      src={video.iconURL}
-                      alt='Profile picture'
-                  />
-                  <Stack spacing='1' flex='1'>
-                      <Heading size='md' noOfLines={2}>{video.name}</Heading>
-                      <Text>{video.creatorName}</Text>
-                      <Text>{video.viewCount} views • {video.timeSincePublished}</Text>
-                  </Stack>
-                  <IconButton
-                      bg='transparent'
-                      aria-label='More settings'
-                      icon={<BsThreeDotsVertical/>}
-                      isRound={true}
-                      width='0.5em'
-                  />
+              <Stack spacing='1' flex='1'>
+                  <Heading color='white' size='md' noOfLines={2}>{video.name}</Heading>
+                  <Text fontSize={15} color='grey'>{video.creatorName}</Text>
+                  <Text fontSize={15} marginTop={-2} color='grey'>{video.viewCount} views • {video.timeSincePublished}</Text>
               </Stack>
-      </Box>
+              <IconButton
+                  bg='transparent'
+                  aria-label='More settings'
+                  icon={<BsThreeDotsVertical size={20}/>}
+                  isRound={true}
+                  color='white'
+                  width='0.5em'
+              />
+            </Stack>
+        </Box>
   )
 }

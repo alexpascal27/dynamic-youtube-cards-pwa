@@ -12,6 +12,7 @@ export async function getServerSideProps() {
             query GetVideos {
                 videoSearch {
                     id,
+                    duration
                     name,
                     iconURL,
                     thumbnailURL,
@@ -33,10 +34,10 @@ export async function getServerSideProps() {
 
 export default function VideosPage({ videos }: InferGetServerSidePropsType<typeof getServerSideProps>) {
     return (
-        <main>
+        <main style={{backgroundColor: 'black'}}>
             <ChakraProvider>
                 <div>
-                    <Grid templateColumns="repeat(5, 1fr)" gap={6}>
+                    <Grid templateColumns="repeat(5, 1fr)" gap={0}>
                         {videos.map((video: Video) => (
                              <GridItem key={video.id}><VideoCard video={video}/> </GridItem>
                         ))}
