@@ -23,7 +23,7 @@ export const VideoCard = ({video}) => {
               <Stack spacing='1' flex='1'>
                   <Heading color='white' size='md' noOfLines={2}>{video.name}</Heading>
                   <Text fontSize={15} color='grey'>{video.creatorName}</Text>
-                  <Text fontSize={15} marginTop={-2} color='grey'>{video.viewCount} views • {video.timeSincePublished}</Text>
+                  <Text fontSize={15} color='grey'>{video.viewCount} views • {video.timeSincePublished}</Text>
               </Stack>
               <IconButton
                   bg='transparent'
