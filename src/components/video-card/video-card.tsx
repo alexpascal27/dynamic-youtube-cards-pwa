@@ -8,8 +8,9 @@ import {
 } from '@chakra-ui/react'
 import { BsThreeDotsVertical } from "react-icons/bs";
 import {VideoCardMediaSection} from "@/components/video-card/video-card-media-section";
+import {Video} from "@/types/videos";
 
-export const VideoCard = ({video}) => {
+export const VideoCard = ({ video }: { video: Video }) => {
     return (
         <Box maxW='sm'>
             <VideoCardMediaSection thumbnailURL={video.thumbnailURL} duration={video.duration}/>
@@ -21,9 +22,11 @@ export const VideoCard = ({video}) => {
                   alt='Profile picture'
               />
               <Stack spacing='1' flex='1'>
-                  <Heading color='white' size='md' noOfLines={2}>{video.name}</Heading>
-                  <Text fontSize={15} color='grey'>{video.creatorName}</Text>
-                  <Text fontSize={15} color='grey'>{video.viewCount} views • {video.timeSincePublished}</Text>
+                  <Heading color='white' fontSize={16} noOfLines={2}>{video.name}</Heading>
+                  <Box mt={1}>
+                  <Text fontSize={15} color='grey' lineHeight={1.5}>{video.creatorName}</Text>
+                  <Text fontSize={15} color='grey' lineHeight={1}>{video.viewCount} views • {video.timeSincePublished}</Text>
+                  </Box>
               </Stack>
               <IconButton
                   bg='transparent'
