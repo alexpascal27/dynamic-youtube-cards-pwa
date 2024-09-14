@@ -27,14 +27,16 @@ export async function getServerSideProps() {
         `,
     });
     const videos: Video[] = data.videoSearch;
+    const tags = ['All', 'Gaming', 'Learning', 'For Women'];
     return {
         props: {
-            videos
+            videos,
+            tags
         },
     };
 }
 
-export default function VideosPage({ videos }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function VideosPage({ videos, tags }: InferGetServerSidePropsType<typeof getServerSideProps>) {
     return (
         <main style={{backgroundColor: 'black'}}>
             <ChakraProvider>
@@ -43,7 +45,7 @@ export default function VideosPage({ videos }: InferGetServerSidePropsType<typeo
                     <Sidebar />
                     <Box flex="1">
                         <Flex mt="4" mb="8" wrap="wrap" gap="3">
-                            {['All', 'Gaming', 'Learning', 'For Women'].map((tag) => (
+                            {tags.map((tag) => (
                                 <Button key={tag} bg="gray.900" size="sm" color="white" px="2" _hover={{ bg: 'gray.700' }}>
                                     {tag}
                                 </Button>
