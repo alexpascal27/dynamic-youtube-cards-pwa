@@ -34,3 +34,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.gitignore
+.gitignore
+.idea/dynamic-youtube-cards-pwa.iml
+.idea/material_theme_project_new.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/inspectionProfiles/Project_Default.xml
+src/app/layout.tsx
