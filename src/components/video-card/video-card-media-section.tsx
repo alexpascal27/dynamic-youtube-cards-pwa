@@ -8,7 +8,7 @@ interface VideoCardMediaSectionProps {
 
 export const VideoCardMediaSection = ({thumbnailURL, duration}: VideoCardMediaSectionProps) => {
     return (
-        <Box // Change into the new component
+        <Box
             bgImg={thumbnailURL}
             bgPosition="center"
             borderRadius='lg'
