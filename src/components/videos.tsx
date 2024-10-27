@@ -1,5 +1,5 @@
 import { Video } from "@/types/videos";
-import { Box, Button, Flex, Grid, GridItem } from "@chakra-ui/react";
+import { Grid, GridItem } from "@chakra-ui/react";
 import { VideoCard } from "./video-card/video-card";
 import { gql, TypedDocumentNode, useQuery } from "@apollo/client";
 
@@ -41,13 +41,13 @@ interface VideosProps {
 }
 
 export default function Videos({tag}: VideosProps) {
-    const { data } = useQuery(
-        getVideos,
-        {variables: {tag: tag}}
-    );
+  const { data } = useQuery(
+    getVideos,
+    {variables: {tag: tag}}
+  );
 
     const videos: Video[] = data?.videoSearch ?? [];
-
+   
     return (
         <Grid templateColumns="repeat(6, 1fr)" gap={3} rowGap={12}>
             {videos.map((video: Video) => (

@@ -11,6 +11,7 @@ export const VideoCardMediaSection = ({thumbnailURL, duration}: VideoCardMediaSe
         <Box
             bgImg={thumbnailURL}
             bgPosition="center"
+            backgroundSize="cover"
             borderRadius='lg'
             height={215}
             width={400}
