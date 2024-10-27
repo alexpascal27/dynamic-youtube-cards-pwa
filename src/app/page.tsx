@@ -35,7 +35,6 @@ export default function Home() {
                         <Videos tag={selectedTag}/>
                     </Box>
                 </Flex>
-                <DemoDynamicVideos />
             </ChakraProvider>
         </main>
     )
